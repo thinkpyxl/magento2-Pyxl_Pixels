@@ -1,0 +1,8 @@
+<?php /** @var $block \Pyxl\Pixels\Block\Search */ ?>
+<?php if ($block->shouldTrackEvent('Search', 'fb') && $search = $block->getSearchString()): ?>
+	<script>
+        fbq('track', 'Search', {
+            search_string: '<?php echo $search ?>'
+        });
+	</script>
+<?php endif; ?>

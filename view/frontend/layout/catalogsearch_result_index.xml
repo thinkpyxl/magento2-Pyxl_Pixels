@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block ifconfig="pyxl_pixels/fb/enable" class="Pyxl\Pixels\Block\Search"
+                   name="fb_search" template="Pyxl_Pixels::fb/search.phtml" after="-"/>
+            <block ifconfig="pyxl_pixels/pinterest/enable" class="Pyxl\Pixels\Block\Search"
+                   name="pinterest_search" template="Pyxl_Pixels::pinterest/search.phtml" after="-"/>
+            <block ifconfig="pyxl_pixels/criteo/enable" class="Pyxl\Pixels\Block\Search"
+                   name="criteo_search" template="Pyxl_Pixels::criteo/search.phtml" after="-"/>
+        </referenceContainer>
+    </body>
+</page>

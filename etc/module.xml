@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+<?php
+/**
+ * @category    Pyxl
+ * @package     Pyxl_Pixels
+ * @copyright   2017 Joel Rainwater
+ * @license     http://opensource.org/licenses/mit-license.php MIT License
+ * @author      Joel Rainwater <jrainwater@thinkpyxl.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Pyxl_Pixels" setup_version="0.0.1">
+        <sequence>
+            <module name="Pyxl_Core" />
+        </sequence>
+    </module>
+</config>

@@ -1,0 +1,6 @@
+<?php /** @var $block \Pyxl\Pixels\Block\Checkout */ ?>
+<?php if ($block->shouldTrackEvent('InitiateCheckout', 'fb') && $quote = $block->getQuote()): ?>
+	<script>
+        fbq('track', 'InitiateCheckout');
+	</script>
+<?php endif; ?>

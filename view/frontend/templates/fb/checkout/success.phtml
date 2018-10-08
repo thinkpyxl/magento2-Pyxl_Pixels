@@ -1,0 +1,25 @@
+<?php /** @var $block \Pyxl\Pixels\Block\Checkout */ ?>
+<?php if ($block->shouldTrackEvent('Purchase', 'fb') && $order = $block->getOrder()): ?>
+	<?php
+	$grandTotal = $block->getGrandTotal();
+	$currency = $block->getCurrencyCode();
+	$items = $block->getItemIds();
+	$qty = $block->getItemsQty();
+	?>
+	<!-- Facebook Conversion Code for Conversions -->
+	<script>
+        fbq('track','Purchase', {
+            value: <?php echo $grandTotal ?>,
+            currency: '<?php echo $currency ?>',
+            content_ids: <?php echo $items ?>,
+            content_type: 'product',
+            num_items: <?php echo $qty; ?>
+        });
+	</script>
+	<noscript>
+		<img height="1" width="1" style="display:none"
+		     src="https://www.facebook.com/tr?id=<?php echo $block->getFacebookHelper()->getAccountId()
+             ?>&ev=Purchase&cd[value]=<?php echo $grandTotal ?>&cd[currency]=<?php echo $currency
+             ?>&cd[num_items]=<?php echo $qty ?>&noscript=1"
+		/></noscript>
+<?php endif; ?>

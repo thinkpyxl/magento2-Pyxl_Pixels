@@ -1,0 +1,13 @@
+<?php /** @var $block \Pyxl\Pixels\Block\Product */ ?>
+<?php if ($block->shouldTrackEvent('pagevisit', 'pinterest') && $product = $block->getProduct()): ?>
+	<script>
+        pintrk('track', 'pagevisit', {
+            value: <?php echo $product->getFinalPrice() ?>,
+	        currency: '<?php echo $block->getCurrencyCode() ?>'
+        });
+	</script>
+    <noscript>
+        <img height="1" width="1" style="display:none;" alt=""
+             src="https://ct.pinterest.com/v3/?tid=<?php echo $block->getPinterestHelper()->getAccountId() ?>&event=pagevisit&noscript=1" />
+    </noscript>
+<?php endif; ?>

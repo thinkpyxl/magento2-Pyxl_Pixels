@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block ifconfig="pyxl_pixels/criteo/enable" class="Pyxl\Pixels\Block\Checkout"
+                   name="criteo_cart" template="Pyxl_Pixels::criteo/cart.phtml" after="-"/>
+        </referenceContainer>
+    </body>
+</page>

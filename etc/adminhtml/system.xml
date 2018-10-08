@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="pyxl_pixels" translate="label" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Pixels</label>
+            <tab>pyxl</tab>
+            <resource>Pyxl_Pixels::config</resource>
+            <group id="fb" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" translate="label">
+                <label>Facebook Events</label>
+                <field id="enable" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="account_id" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Facebook Pixel ID</label>
+                </field>
+                <field id="events" translate="label" type="multiselect" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Events to Track</label>
+                    <source_model>Pyxl\Pixels\Model\Config\Source\FacebookEvents</source_model>
+                </field>
+            </group>
+            <group id="pinterest" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" translate="label">
+                <label>Pinterest Events</label>
+                <field id="enable" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="account_id" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Pinterest Tag ID</label>
+                </field>
+                <field id="events" translate="label" type="multiselect" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Events to Track</label>
+                    <source_model>Pyxl\Pixels\Model\Config\Source\PinterestEvents</source_model>
+                </field>
+            </group>
+            <group id="criteo" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" translate="label">
+                <label>Criteo OneTag</label>
+                <field id="enable" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="account_id" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Criteo Account ID</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

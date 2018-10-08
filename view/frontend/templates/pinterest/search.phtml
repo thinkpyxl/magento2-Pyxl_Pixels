@@ -1,0 +1,12 @@
+<?php /** @var $block \Pyxl\Pixels\Block\Search */ ?>
+<?php if ($block->shouldTrackEvent('search', 'pinterest') && $search = $block->getSearchString()): ?>
+	<script>
+        pintrk('track', 'search', {
+            search_query: '<?php echo $search ?>'
+        });
+	</script>
+	<noscript>
+		<img height="1" width="1" style="display:none;" alt=""
+		     src="https://ct.pinterest.com/v3/?tid=YOUR_TAG_ID&event=search&ed[search_query]=<?php echo $search ?>&noscript=1" />
+	</noscript>
+<?php endif; ?>

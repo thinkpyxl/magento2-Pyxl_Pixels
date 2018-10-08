@@ -1,0 +1,10 @@
+<?php /** @var $block \Pyxl\Pixels\Block\Page */ ?>
+<?php if ($block->shouldTrackEvent('pagevisit', 'pinterest') && $page = $block->getPage()): ?>
+	<script>
+        pintrk('track', 'pagevisit');
+	</script>
+	<noscript>
+		<img height="1" width="1" style="display:none;" alt=""
+		     src="https://ct.pinterest.com/v3/?tid=<?php echo $block->getPinterestHelper()->getAccountId() ?>&event=pagevisit&noscript=1" />
+	</noscript>
+<?php endif; ?>

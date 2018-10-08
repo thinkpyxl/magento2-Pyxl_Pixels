@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<!-- This is here for compatibility with FishPig WordPress integration -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block ifconfig="pyxl_pixels/fb/enable" class="Pyxl\Pixels\Block\WordPress\Post"
+                   name="fb_wp_post" template="Pyxl_Pixels::fb/wordpress/post.phtml" after="-"/>
+            <block ifconfig="pyxl_pixels/pinterest/enable" class="Pyxl\Pixels\Block\WordPress\Post"
+                   name="pinterest_wp_post" template="Pyxl_Pixels::pinterest/wordpress/post.phtml" after="-"/>
+        </referenceContainer>
+    </body>
+</page>

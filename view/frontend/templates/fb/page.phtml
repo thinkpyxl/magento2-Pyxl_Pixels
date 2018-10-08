@@ -1,0 +1,11 @@
+<?php /** @var $block \Pyxl\Pixels\Block\Page */ ?>
+<?php if ($block->shouldTrackEvent('ViewContent', 'fb') && $page = $block->getPage()): ?>
+	<script>
+        fbq('track', 'ViewContent', {
+            content_name: '<?php echo $page->getTitle() ?>',
+            referrer: document.referrer,
+            userAgent: navigator.userAgent,
+            language: navigator.language
+        });
+	</script>
+<?php endif; ?>

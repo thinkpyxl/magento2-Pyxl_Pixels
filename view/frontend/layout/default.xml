@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="head.additional">
+            <block ifconfig="pyxl_pixels/fb/enable" class="Pyxl\Pixels\Block\Core"
+                   name="fb_pixel" before="-" template="Pyxl_Pixels::fb/pixel.phtml"/>
+            <block ifconfig="pyxl_pixels/pinterest/enable" class="Pyxl\Pixels\Block\Core"
+                   name="pinterest_pixel" before="-" template="Pyxl_Pixels::pinterest/pixel.phtml"/>
+        </referenceBlock>
+        <referenceBlock name="after.body.start">
+            <block class="Magento\Framework\View\Element\Template" name="pyxl.conversions" before="-"
+                   template="Pyxl_Pixels::addtocart.phtml">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="pyxlConversions" xsi:type="array">
+                                <item name="component" xsi:type="string">Pyxl_Pixels/js/view/pyxl-conversions</item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

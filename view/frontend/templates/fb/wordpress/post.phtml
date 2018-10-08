@@ -1,0 +1,11 @@
+<?php /** @var $block \Pyxl\Pixels\Block\WordPress\Post */ ?>
+<?php if ($block->shouldTrackEvent('ViewContent', 'fb') && $post = $block->getPost()): ?>
+	<script>
+        fbq('track', 'ViewContent', {
+            content_name: '<?php echo $post->getName() ?>',
+            referrer: document.referrer,
+            userAgent: navigator.userAgent,
+            language: navigator.language
+        });
+	</script>
+<?php endif; ?>

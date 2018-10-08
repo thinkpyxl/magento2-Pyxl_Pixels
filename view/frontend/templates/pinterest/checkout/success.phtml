@@ -1,0 +1,25 @@
+<?php /** @var $block \Pyxl\Pixels\Block\Checkout */ ?>
+<?php if ($block->shouldTrackEvent('checkout', 'pinterest') && $order = $block->getOrder()): ?>
+	<?php
+	$grandTotal = $block->getGrandTotal();
+	$currency = $block->getCurrencyCode();
+	$items = $block->getOrderItems('pinterest');
+	$qty = $block->getItemsQty();
+	?>
+	<!-- Pinterest Conversion Code for Conversions -->
+	<script>
+        pintrk('track','checkout', {
+            value: <?php echo $grandTotal ?>,
+            currency: '<?php echo $currency ?>',
+            order_quantity: <?php echo $qty; ?>,
+            line_items: <?php echo $items ?>
+        });
+	</script>
+	<noscript>
+		<img height="1" width="1" style="display:none;" alt=""
+		     src="https://ct.pinterest.com/v3/?tid=<?php echo $block->getPinterestHelper()->getAccountId()
+		     ?>&event=checkout&ed[value]=<?php echo $grandTotal
+		     ?>&ed[order_quantity]=<?php echo $qty
+		     ?>&ed[currency]=<?php echo $currency ?>&noscript=1"/>
+	</noscript>
+<?php endif; ?>

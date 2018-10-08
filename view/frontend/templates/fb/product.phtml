@@ -1,0 +1,16 @@
+<?php /** @var $block \Pyxl\Pixels\Block\Product */ ?>
+<?php if ($block->shouldTrackEvent('ViewContent', 'fb') && $product = $block->getProduct()): ?>
+	<script>
+        fbq('track', 'ViewContent', {
+            content_type: 'product',
+	        content_name: '<?php echo $product->getName() ?>',
+	        content_category: '<?php echo $block->getCategory() ?>',
+            content_ids: ['<?php echo $product->getSku() ?>'],
+            value: <?php echo $product->getFinalPrice() ?>,
+            currency: '<?php echo $block->getCurrencyCode() ?>',
+            referrer: document.referrer,
+            userAgent: navigator.userAgent,
+            language: navigator.language
+        });
+	</script>
+<?php endif; ?>

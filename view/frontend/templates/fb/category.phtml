@@ -1,0 +1,10 @@
+<?php /** @var $block \Pyxl\Pixels\Block\Category */ ?>
+<?php if ($block->shouldTrackEvent('ViewContent', 'fb') && $category = $block->getCategory()): ?>
+	<script>
+        fbq('track', 'ViewContent', {
+            content_name: '<?php echo $category->getName() ?>',
+            content_ids: <?php echo $block->getProductsArray() ?>,
+            content_type: 'product'
+        });
+	</script>
+<?php endif; ?>
