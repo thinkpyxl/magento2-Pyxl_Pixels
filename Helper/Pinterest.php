@@ -14,22 +14,22 @@ use Magento\Framework\App\Helper\Context;
 class Pinterest extends Core
 {
 
-	/**
-	 * @var array
-	 */
-	protected $_settings;
+    /**
+     * @var array
+     */
+    protected $_settings;
 
-	/**
-	 * Pinterest constructor.
-	 *
-	 * @param Context $context
-	 */
-	public function __construct( Context $context ) {
-		parent::__construct( $context );
-		$this->_settings =
-			isset($this->_config['pinterest'])
-				? $this->_config['pinterest']
-				: ['enable' => false];
-	}
-
+    /**
+     * Pinterest constructor.
+     *
+     * @param Context $context
+     */
+    public function __construct(Context $context)
+    {
+        parent::__construct($context);
+        $this->_settings =
+            isset($this->_config['pinterest'])
+                ? $this->_config['pinterest']
+                : ['enable' => false];
+    }
 }

@@ -14,22 +14,21 @@ use Magento\Framework\App\Helper\Context;
 class Criteo extends Core
 {
 
-	/**
-	 * @var array
-	 */
-	protected $_settings;
+    /**
+     * @var array
+     */
+    protected $_settings;
 
-	/**
-	 * Criteo constructor.
-	 *
-	 * @param Context $context
-	 */
-	public function __construct( Context $context ) {
-		parent::__construct( $context );
-		$this->_settings =
-			isset($this->_config['criteo'])
-				? $this->_config['criteo']
-				: ['enable' => false];
-	}
-
+    /**
+     * Criteo constructor.
+     *
+     * @param Context $context
+     */
+    public function __construct(Context $context) {
+        parent::__construct($context);
+        $this->_settings =
+            isset($this->_config['criteo'])
+                ? $this->_config['criteo']
+                : ['enable' => false];
+    }
 }

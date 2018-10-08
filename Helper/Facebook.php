@@ -14,22 +14,22 @@ use Magento\Framework\App\Helper\Context;
 class Facebook extends Core
 {
 
-	/**
-	 * @var array
-	 */
-	protected $_settings;
+    /**
+     * @var array
+     */
+    protected $_settings;
 
-	/**
-	 * Facebook constructor.
-	 *
-	 * @param Context $context
-	 */
-	public function __construct( Context $context ) {
-		parent::__construct( $context );
-		$this->_settings =
-			isset($this->_config['fb'])
-				? $this->_config['fb']
-				: ['enable' => false];
-	}
-
+    /**
+     * Facebook constructor.
+     *
+     * @param Context $context
+     */
+    public function __construct(Context $context)
+    {
+        parent::__construct($context);
+        $this->_settings =
+            isset($this->_config['fb'])
+                ? $this->_config['fb']
+                : ['enable' => false];
+    }
 }
